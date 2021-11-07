@@ -1,0 +1,12 @@
+parameters:
+    level: max
+    checkMissingIterableValueType: false
+    paths:
+        - .
+    scanDirectories:
+        - phar://PharBuilder/PocketMine-MP.phar
+    excludePaths:
+        analyse:
+            - bin
+            - PharBuilder
+            - vendor

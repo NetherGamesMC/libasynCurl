@@ -1,0 +1,13 @@
+{
+  "name": "nethergamesmc/libasyncurl",
+  "description": "An async Curl library for PocketMine-MP",
+  "license": "proprietary",
+  "type": "project",
+  "require": {
+    "php": "^8.0"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "0.12.94"
+  },
+  "minimum-stability": "dev"
+}
