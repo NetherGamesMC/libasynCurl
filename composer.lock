@@ -1,85 +1,85 @@
 {
-  "_readme": [
-    "This file locks the dependencies of your project to a known state",
-    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-    "This file is @generated automatically"
-  ],
-  "content-hash": "1ac2827e3a7cfa16c77e5dec2632857c",
-  "packages": [],
-  "packages-dev": [
-    {
-      "name": "phpstan/phpstan",
-      "version": "0.12.94",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/phpstan/phpstan.git",
-        "reference": "3d0ba4c198a24e3c3fc489f3ec6ac9612c4be5d6"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/phpstan/phpstan/zipball/3d0ba4c198a24e3c3fc489f3ec6ac9612c4be5d6",
-        "reference": "3d0ba4c198a24e3c3fc489f3ec6ac9612c4be5d6",
-        "shasum": ""
-      },
-      "require": {
-        "php": "^7.1|^8.0"
-      },
-      "conflict": {
-        "phpstan/phpstan-shim": "*"
-      },
-      "bin": [
-        "phpstan",
-        "phpstan.phar"
-      ],
-      "type": "library",
-      "extra": {
-        "branch-alias": {
-          "dev-master": "0.12-dev"
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "858947bb2ec1ad0708af10e3a281969b",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "phpstan/phpstan",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "cb317029197236c571c1b9305b8dd12850d8d85c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/cb317029197236c571c1b9305b8dd12850d8d85c",
+                "reference": "cb317029197236c571c1b9305b8dd12850d8d85c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "support": {
+                "issues": "https://github.com/phpstan/phpstan/issues",
+                "source": "https://github.com/phpstan/phpstan/tree/1.1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/phpstan",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/phpstan",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-11-06T22:46:47+00:00"
         }
-      },
-      "autoload": {
-        "files": [
-          "bootstrap.php"
-        ]
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "description": "PHPStan - PHP Static Analysis Tool",
-      "support": {
-        "issues": "https://github.com/phpstan/phpstan/issues",
-        "source": "https://github.com/phpstan/phpstan/tree/0.12.94"
-      },
-      "funding": [
-        {
-          "url": "https://github.com/ondrejmirtes",
-          "type": "github"
-        },
-        {
-          "url": "https://github.com/phpstan",
-          "type": "github"
-        },
-        {
-          "url": "https://www.patreon.com/phpstan",
-          "type": "patreon"
-        },
-        {
-          "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
-          "type": "tidelift"
-        }
-      ],
-      "time": "2021-07-30T09:05:27+00:00"
-    }
-  ],
-  "aliases": [],
-  "minimum-stability": "dev",
-  "stability-flags": [],
-  "prefer-stable": false,
-  "prefer-lowest": false,
-  "platform": {
-    "php": "^7.4 || ^8.0"
-  },
-  "platform-dev": [],
-  "plugin-api-version": "2.1.0"
+    ],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^8.0"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.1.0"
 }
