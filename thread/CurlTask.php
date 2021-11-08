@@ -7,7 +7,10 @@ namespace libasynCurl\thread;
 
 
 use Closure;
+use InvalidArgumentException;
 use pocketmine\scheduler\AsyncTask;
+use pocketmine\utils\InternetRequestResult;
+use pocketmine\utils\Utils;
 use function json_decode;
 use function json_encode;
 
@@ -26,7 +29,10 @@ abstract class CurlTask extends AsyncTask
         $this->timeout = $timeout;
         $this->headers = json_encode($headers, JSON_THROW_ON_ERROR);
 
-        $this->storeLocal('closure', $closure);
+        if ($closure !== null) {
+            Utils::validateCallableSignature(function(?InternetRequestResult $result) : void{}, $closure);
+            $this->storeLocal('closure', $closure);
+        }
     }
 
     public function getHeaders(): array
@@ -36,10 +42,14 @@ abstract class CurlTask extends AsyncTask
 
     public function onCompletion(): void
     {
-        $closure = $this->fetchLocal('closure');
+        try {
+            $closure = $this->fetchLocal('closure');
 
-        if ($closure !== null) {
-            $closure($this->getResult());
+            if ($closure !== null) {
+                $closure($this->getResult());
+            }
+        } catch (InvalidArgumentException $exception) {
+
         }
     }
 }
