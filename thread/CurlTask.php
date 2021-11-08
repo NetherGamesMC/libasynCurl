@@ -44,12 +44,12 @@ abstract class CurlTask extends AsyncTask
     {
         try {
             $closure = $this->fetchLocal('closure');
-
-            if ($closure !== null) {
-                $closure($this->getResult());
-            }
         } catch (InvalidArgumentException $exception) {
+            return;
+        }
 
+        if ($closure !== null) {
+            $closure($this->getResult());
         }
     }
 }
