@@ -13,6 +13,7 @@ use pocketmine\utils\InternetRequestResult;
 use pocketmine\utils\Utils;
 use function json_decode;
 use function json_encode;
+use const JSON_THROW_ON_ERROR;
 
 abstract class CurlTask extends AsyncTask
 {
@@ -37,12 +38,16 @@ abstract class CurlTask extends AsyncTask
 
     public function getHeaders(): array
     {
-        return json_decode($this->headers, true, 512, JSON_THROW_ON_ERROR);
+        /** @var array $headers */
+        $headers = json_decode($this->headers, true, 512, JSON_THROW_ON_ERROR);
+
+        return $headers;
     }
 
     public function onCompletion(): void
     {
         try {
+            /** @var Closure $closure */
             $closure = $this->fetchLocal('closure');
         } catch (InvalidArgumentException $exception) {
             return;
