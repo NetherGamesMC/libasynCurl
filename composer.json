@@ -9,5 +9,10 @@
   "require-dev": {
     "phpstan/phpstan": "1.1.2"
   },
+  "autoload": {
+    "psr-4": {
+      "libasynCurl\\": "/"
+    }
+  },
   "minimum-stability": "dev"
 }
