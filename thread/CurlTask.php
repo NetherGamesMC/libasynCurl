@@ -27,7 +27,12 @@ abstract class CurlTask extends AsyncTask
     {
         $this->page = $page;
         $this->timeout = $timeout;
-        $this->headers = igbinary_serialize($headers);
+
+        $serialized_headers = igbinary_serialize($headers);
+        if ($serialized_headers === null) {
+            throw new InvalidArgumentException("Headers cannot be serialized");
+        }
+        $this->headers = $serialized_headers;
 
         if ($closure !== null) {
             Utils::validateCallableSignature(function (?InternetRequestResult $result): void {}, $closure);
