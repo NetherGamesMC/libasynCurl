@@ -4,7 +4,8 @@
   "license": "proprietary",
   "type": "project",
   "require": {
-    "php": "^8.0"
+    "php": "^8.0",
+    "ext-igbinary": "*"
   },
   "require-dev": {
     "phpstan/phpstan": "1.2.0"
