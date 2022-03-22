@@ -8,6 +8,7 @@ namespace libasynCurl;
 
 use Closure;
 use InvalidArgumentException;
+use libasynCurl\thread\CurlDeleteTask;
 use libasynCurl\thread\CurlGetTask;
 use libasynCurl\thread\CurlPostTask;
 use libasynCurl\thread\CurlThreadPool;
@@ -48,6 +49,11 @@ class Curl
     public static function postRequest(string $page, array|string $args, int $timeout = 10, array $headers = [], Closure $closure = null): void
     {
         self::$threadPool->submitTask(new CurlPostTask($page, $args, $timeout, $headers, $closure));
+    }
+
+    public static function deleteRequest(string $page, array|string $args, int $timeout = 10, array $headers = [], Closure $closure = null): void
+    {
+        self::$threadPool->submitTask(new CurlDeleteTask($page, $args, $timeout, $headers, $closure));
     }
 
     public static function getRequest(string $page, int $timeout = 10, array $headers = [], Closure $closure = null): void
