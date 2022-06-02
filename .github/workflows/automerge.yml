@@ -7,9 +7,6 @@ on:
     types:
       - opened
       - synchronize
-  push:
-    branches:
-      - master
 
 jobs:
   merge-me:
