@@ -10,7 +10,6 @@ use Closure;
 use InvalidArgumentException;
 use libasynCurl\thread\CurlDeleteTask;
 use libasynCurl\thread\CurlGetTask;
-use libasynCurl\thread\CurlHeadTask;
 use libasynCurl\thread\CurlPostTask;
 use libasynCurl\thread\CurlThreadPool;
 use pocketmine\plugin\PluginBase;
@@ -60,9 +59,5 @@ class Curl
     public static function getRequest(string $page, int $timeout = 10, array $headers = [], Closure $closure = null): void
     {
         self::$threadPool->submitTask(new CurlGetTask($page, $timeout, $headers, $closure));
-    }
-
-    public static function headRequest(string $page, int $timeout = 10, array $headers = [], Closure $closure = null): void{
-        self::$threadPool->submitTask(new CurlHeadTask($page, $timeout, $headers, $closure));
     }
 }
