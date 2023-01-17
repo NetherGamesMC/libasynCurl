@@ -11,6 +11,7 @@ use InvalidArgumentException;
 use libasynCurl\thread\CurlDeleteTask;
 use libasynCurl\thread\CurlGetTask;
 use libasynCurl\thread\CurlPostTask;
+use libasynCurl\thread\CurlPutTask;
 use libasynCurl\thread\CurlThreadPool;
 use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\ClosureTask;
@@ -49,6 +50,10 @@ class Curl
     public static function postRequest(string $page, array|string $args, int $timeout = 10, array $headers = [], Closure $closure = null): void
     {
         self::$threadPool->submitTask(new CurlPostTask($page, $args, $timeout, $headers, $closure));
+    }
+
+    public static function putRequest(string $page, array|string $args, int $timeout = 10, array $headers = [], Closure $closure = null){
+        self::$threadPool->submitTask(new CurlPutTask($page, $args, $timeout, $headers, $closure));
     }
 
     public static function deleteRequest(string $page, array|string $args, int $timeout = 10, array $headers = [], Closure $closure = null): void
