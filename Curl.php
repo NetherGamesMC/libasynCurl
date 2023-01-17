@@ -52,7 +52,8 @@ class Curl
         self::$threadPool->submitTask(new CurlPostTask($page, $args, $timeout, $headers, $closure));
     }
 
-    public static function putRequest(string $page, array|string $args, int $timeout = 10, array $headers = [], Closure $closure = null){
+    public static function putRequest(string $page, array|string $args, int $timeout = 10, array $headers = [], Closure $closure = null): void
+    {
         self::$threadPool->submitTask(new CurlPutTask($page, $args, $timeout, $headers, $closure));
     }
 

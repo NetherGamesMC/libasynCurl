@@ -42,9 +42,8 @@ class CurlPutTask extends CurlTask
     {
         try {
             return Internet::simpleCurl($page, $timeout, $extraHeaders, [
-                CURLOPT_POST => 1,
                 CURLOPT_CUSTOMREQUEST => "PUT",
-                CURLOPT_POSTFIELDS => http_build_query($args)
+                CURLOPT_POSTFIELDS => $args
             ]);
         } catch (InternetException $ex) {
             $err = $ex->getMessage();
