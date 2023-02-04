@@ -9,10 +9,9 @@ namespace libasynCurl\thread;
 use Closure;
 use InvalidArgumentException;
 use pocketmine\scheduler\AsyncTask;
+use pocketmine\thread\NonThreadSafeValue;
 use pocketmine\utils\InternetRequestResult;
 use pocketmine\utils\Utils;
-use function igbinary_serialize;
-use function igbinary_unserialize;
 
 abstract class CurlTask extends AsyncTask
 {
@@ -20,19 +19,14 @@ abstract class CurlTask extends AsyncTask
     protected string $page;
     /** @var int */
     protected int $timeout;
-    /** @var string */
-    protected string $headers;
+    /** @phpstan-var NonThreadSafeValue<array<string>> */
+    protected NonThreadSafeValue $headers;
 
     public function __construct(string $page, int $timeout, array $headers, Closure $closure = null)
     {
         $this->page = $page;
         $this->timeout = $timeout;
-
-        $serialized_headers = igbinary_serialize($headers);
-        if ($serialized_headers === null) {
-            throw new InvalidArgumentException("Headers cannot be serialized");
-        }
-        $this->headers = $serialized_headers;
+        $this->headers = new NonThreadSafeValue($headers);
 
         if ($closure !== null) {
             Utils::validateCallableSignature(function (?InternetRequestResult $result): void {}, $closure);
@@ -40,12 +34,12 @@ abstract class CurlTask extends AsyncTask
         }
     }
 
+    /**
+     * @return string[]
+     */
     public function getHeaders(): array
     {
-        /** @var array $headers */
-        $headers = igbinary_unserialize($this->headers);
-
-        return $headers;
+        return $this->headers->deserialize();
     }
 
     public function onCompletion(): void
