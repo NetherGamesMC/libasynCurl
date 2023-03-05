@@ -19,7 +19,7 @@ abstract class CurlTask extends AsyncTask
     protected string $page;
     /** @var int */
     protected int $timeout;
-    /** @phpstan-var NonThreadSafeValue<array<string>> */
+    /** @phpstan-var NonThreadSafeValue<array> */
     protected NonThreadSafeValue $headers;
 
     public function __construct(string $page, int $timeout, array $headers, Closure $closure = null)
