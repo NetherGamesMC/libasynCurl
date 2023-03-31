@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "166738c96f8cf4b2580499dc71ed311a",
+    "content-hash": "b66df76a6567a4ba125decb9a8f4b650",
     "packages": [],
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.8",
+            "version": "1.10.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "0166aef76e066f0dd2adc2799bdadfa1635711e9"
+                "reference": "9b13dafe3d66693d20fe5729c3dde1d31bb64703"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/0166aef76e066f0dd2adc2799bdadfa1635711e9",
-                "reference": "0166aef76e066f0dd2adc2799bdadfa1635711e9",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/9b13dafe3d66693d20fe5729c3dde1d31bb64703",
+                "reference": "9b13dafe3d66693d20fe5729c3dde1d31bb64703",
                 "shasum": ""
             },
             "require": {
@@ -67,7 +67,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-03-24T10:28:16+00:00"
+            "time": "2023-03-30T08:58:01+00:00"
         }
     ],
     "aliases": [],
