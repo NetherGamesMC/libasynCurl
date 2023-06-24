@@ -3,6 +3,7 @@
   "description": "An async Curl library for PocketMine-MP",
   "license": "proprietary",
   "type": "project",
+  "version": "dev-pm5",
   "require": {
     "php": "^8.0",
     "ext-igbinary": "*"
