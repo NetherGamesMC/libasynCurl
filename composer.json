@@ -8,7 +8,7 @@
     "ext-igbinary": "*"
   },
   "require-dev": {
-    "phpstan/phpstan": "2.1.43"
+    "phpstan/phpstan": "2.1.44"
   },
   "autoload": {
     "psr-4": {
